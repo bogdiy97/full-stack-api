@@ -10,7 +10,12 @@ app.use(
   cors({
     origin: "https://soft-meerkat-805c88.netlify.app", // replace with your frontend domain
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "Origin",
+      "X-Requested-With",
+    ],
   })
 );
 
