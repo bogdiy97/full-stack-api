@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 import { AuthContext } from "../helpers/AuthContext";
 
 function CreatePost() {
-  const { authState } = useContext(AuthContext);
+  //const { authState } = useContext(AuthContext);
 
   let navigate = useNavigate();
   const initialValues = {

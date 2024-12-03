@@ -9,7 +9,7 @@ import { AuthContext } from "../helpers/AuthContext";
 function Home() {
   const [listOfPosts, setListOfPosts] = useState([]);
   const [likedPosts, setLikedPosts] = useState([]);
-  const { authState } = useContext(AuthContext);
+  //const { authState } = useContext(AuthContext);
   let navigate = useNavigate();
 
   useEffect(() => {

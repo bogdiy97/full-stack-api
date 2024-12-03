@@ -6,13 +6,14 @@ const db = require("./models"); // Make sure your `./models/index.js` exists and
 
 const app = express();
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["https://your-frontend-name.netlify.app"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app
+  .use
+  // cors({
+  //   origin: ["https://your-frontend-name.netlify.app"],
+  //   methods: ["GET", "POST", "PUT", "DELETE"],
+  //   credentials: true,
+  // })
+  ();
 
 // Routers
 const postRouter = require("./routes/Posts");
