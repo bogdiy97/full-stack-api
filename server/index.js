@@ -10,7 +10,7 @@ app.use(express.json());
 // Enable CORS with a more secure setup
 app.use(
   cors({
-    origin: "https://soft-meerkat-805c88.netlify.app", // Your frontend URL
+    origin: "*", // Your frontend URL
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Ensure OPTIONS is included
     allowedHeaders: [
       "Content-Type",
