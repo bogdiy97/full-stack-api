@@ -11,6 +11,7 @@ cors({
   origin: ["https://soft-meerkat-805c88.netlify.app/"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"],
 })();
 
 // Routers
