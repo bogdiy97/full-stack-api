@@ -35,6 +35,12 @@ router.post("/login", async (req, res) => {
 });
 
 router.get("/auth", validateToken, (req, res) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://soft-meerkat-805c88.netlify.app"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   res.json(req.user);
 });
 
