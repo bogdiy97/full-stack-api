@@ -6,18 +6,7 @@ const db = require("./models"); // Make sure your `./models/index.js` exists and
 
 const app = express();
 app.use(express.json());
-app.use(
-  cors({
-    origin: "https://soft-meerkat-805c88.netlify.app", // replace with your frontend domain
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: [
-      "Content-Type",
-      "Authorization",
-      "Origin",
-      "X-Requested-With",
-    ],
-  })
-);
+app.use(cors({ origin: "*" }));
 
 // Routers
 const postRouter = require("./routes/Posts");
