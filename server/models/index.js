@@ -12,14 +12,9 @@ let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
-  sequelize = new Sequelize({
-    username: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DATABASE,
-    dialect: "mysql",
-    port: process.env.DB_PORT,
-    host: process.env.DB_HOST,
-  });
+  sequelize = new Sequelize(
+    "mysql://umqto7rzrtps9jke:crLg7lZ7EGE1ic4JeZpA@b4zwhmdvajn65wlzrhuf-mysql.services.clever-cloud.com:3306/b4zwhmdvajn65wlzrhuf"
+  );
 }
 
 fs.readdirSync(__dirname)
