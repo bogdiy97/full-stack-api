@@ -8,7 +8,7 @@ function ChangePassword() {
   const changePassword = () => {
     axios
       .put(
-        "https://full-stack-ewxbtg65f-bogdiy97s-projects.vercel.app/auth/changepassword",
+        "https://full-stack-api-two.vercel.app/auth/changepassword",
         {
           oldPassword: oldPassword,
           newPassword: newPassword,

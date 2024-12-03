@@ -17,12 +17,9 @@ function Home() {
       navigate("/login");
     } else {
       axios
-        .get(
-          "https://full-stack-ewxbtg65f-bogdiy97s-projects.vercel.app/posts",
-          {
-            headers: { accessToken: localStorage.getItem("accessToken") },
-          }
-        )
+        .get("https://full-stack-api-two.vercel.app/posts", {
+          headers: { accessToken: localStorage.getItem("accessToken") },
+        })
         .then((response) => {
           setListOfPosts(response.data.listOfPosts);
           setLikedPosts(
@@ -37,7 +34,7 @@ function Home() {
   const likeAPost = (postId) => {
     axios
       .post(
-        "https://full-stack-ewxbtg65f-bogdiy97s-projects.vercel.app/likes",
+        "https://full-stack-api-two.vercel.app/likes",
         { PostId: postId },
         { headers: { accessToken: localStorage.getItem("accessToken") } }
       )

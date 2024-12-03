@@ -13,10 +13,7 @@ function Login() {
   const login = () => {
     const data = { username: username, password: password };
     axios
-      .post(
-        "https://full-stack-ewxbtg65f-bogdiy97s-projects.vercel.app/auth/login",
-        data
-      )
+      .post("https://full-stack-api-two.vercel.app/auth/login", data)
       .then((response) => {
         if (response.data.error) {
           alert(response.data.error);

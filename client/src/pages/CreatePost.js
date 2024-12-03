@@ -26,13 +26,9 @@ function CreatePost() {
 
   const onSubmit = (data) => {
     axios
-      .post(
-        "https://full-stack-ewxbtg65f-bogdiy97s-projects.vercel.app/posts",
-        data,
-        {
-          headers: { accessToken: localStorage.getItem("accessToken") },
-        }
-      )
+      .post("https://full-stack-api-two.vercel.app/posts", data, {
+        headers: { accessToken: localStorage.getItem("accessToken") },
+      })
       .then((response) => {
         navigate("/");
       });

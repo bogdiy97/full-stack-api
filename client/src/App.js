@@ -21,14 +21,11 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(
-        "https://full-stack-ewxbtg65f-bogdiy97s-projects.vercel.app/auth/auth",
-        {
-          headers: {
-            accessToken: localStorage.getItem("accessToken"),
-          },
-        }
-      )
+      .get("https://full-stack-api-two.vercel.app/auth/auth", {
+        headers: {
+          accessToken: localStorage.getItem("accessToken"),
+        },
+      })
       .then((response) => {
         if (response.data.error) {
           setAuthState({ ...authState, status: false });
