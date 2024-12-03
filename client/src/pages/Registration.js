@@ -17,10 +17,15 @@ function Registration() {
   });
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:3001/auth", data).then(() => {
-      console.log(data);
-      navigate(`/login`);
-    });
+    axios
+      .post(
+        "https://full-stack-ewxbtg65f-bogdiy97s-projects.vercel.app/auth",
+        data
+      )
+      .then(() => {
+        console.log(data);
+        navigate(`/login`);
+      });
   };
 
   return (

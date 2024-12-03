@@ -12,19 +12,24 @@ function Login() {
 
   const login = () => {
     const data = { username: username, password: password };
-    axios.post("http://localhost:3001/auth/login", data).then((response) => {
-      if (response.data.error) {
-        alert(response.data.error);
-      } else {
-        localStorage.setItem("accessToken", response.data.token);
-        setAuthState({
-          username: response.data.username,
-          id: response.data.id,
-          status: true,
-        });
-        navigate("/");
-      }
-    });
+    axios
+      .post(
+        "https://full-stack-ewxbtg65f-bogdiy97s-projects.vercel.app/auth/login",
+        data
+      )
+      .then((response) => {
+        if (response.data.error) {
+          alert(response.data.error);
+        } else {
+          localStorage.setItem("accessToken", response.data.token);
+          setAuthState({
+            username: response.data.username,
+            id: response.data.id,
+            status: true,
+          });
+          navigate("/");
+        }
+      });
   };
   return (
     <div className="loginContainer">
