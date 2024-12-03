@@ -6,7 +6,29 @@ const db = require("./models"); // Make sure your `./models/index.js` exists and
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "*" }));
+app.use(
+  cors({
+    origin: "*", // Allow all origins
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "Origin",
+      "X-Requested-With",
+    ],
+  })
+);
+
+app.get("/b4zwhmdvajn65wlzrhuf", async (req, res) => {
+  try {
+    await db.sequelize.authenticate();
+    res.json({ message: "Database connected successfully!" });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ error: "Database connection failed", details: error });
+  }
+});
 
 // Routers
 const postRouter = require("./routes/Posts");
