@@ -10,14 +10,14 @@ app.use(express.json());
 // Enable CORS with a more secure setup
 app.use(
   cors({
-    origin: "*", // Your frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Ensure OPTIONS is included
-    allowedHeaders: [
-      "Content-Type",
-      "Authorization",
-      "Origin",
-      "X-Requested-With",
+    origin: [
+      "http://localhost:3000",
+      "https://your-frontend-domain.vercel.app",
     ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+
     credentials: true, // If you're using cookies or tokens in the headers
   })
 );
